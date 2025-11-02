@@ -29,7 +29,7 @@ try
             Contact = new OpenApiContact
             {
                 Name = "Meena",
-                Email = "meena@ing.com"
+                Email = "meena@ingram.com"
             },
             Description = "This API exposes endpoints for eCommerce project",
         });
