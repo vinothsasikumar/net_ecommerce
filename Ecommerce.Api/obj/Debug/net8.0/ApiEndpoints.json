@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "Ecommerce.Api.Controllers.UserController",
+    "Method": "CreateOrder",
+    "RelativePath": "api/user/create-order/{orderId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Ecommerce.Api.Controllers.UserController",
+    "Method": "UserHealthCheck",
+    "RelativePath": "api/user/health",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
