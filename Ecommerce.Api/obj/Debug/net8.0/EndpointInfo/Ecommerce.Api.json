@@ -5,15 +5,15 @@
     "description": "This API exposes endpoints for eCommerce project",
     "contact": {
       "name": "Meena",
-      "email": "meena@ing.com"
+      "email": "meena@ingram.com"
     },
     "version": "v1"
   },
   "paths": {
-    "/api/user/health": {
+    "/api/products": {
       "get": {
         "tags": [
-          "User"
+          "Product"
         ],
         "responses": {
           "200": {
@@ -22,16 +22,15 @@
         }
       }
     },
-    "/api/user/create-order/{orderId}": {
-      "post": {
+    "/api/products/get": {
+      "get": {
         "tags": [
-          "User"
+          "Product"
         ],
         "parameters": [
           {
-            "name": "orderId",
-            "in": "path",
-            "required": true,
+            "name": "productId",
+            "in": "query",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -44,7 +43,91 @@
           }
         }
       }
+    },
+    "/api/products/create": {
+      "post": {
+        "tags": [
+          "Product"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/products/update": {
+      "put": {
+        "tags": [
+          "Product"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/products/delete": {
+      "delete": {
+        "tags": [
+          "Product"
+        ],
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/user/health": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
-  "components": { }
+  "components": {
+    "schemas": {
+      "ProductDTO": {
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
 }

@@ -17,8 +17,7 @@ try
 
     builder.Services.AddControllers();
 
-    builder.Services.AddTransient<IUserService, UserService>();
-    builder.Services.AddTransient<IOrderService, OrderService>();
+    builder.Services.AddScoped<IProductService, ProductService>();
 
     builder.Services.AddSwaggerGen(config =>
     {
